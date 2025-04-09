@@ -1,8 +1,8 @@
-import React from 'react'
+import styles from './admin.module.css'
 
 const AdminPage = () => {
   return (
-    <div>AdminPage</div>
+    <div><h1>DashBoard</h1></div>
   )
 }
 
