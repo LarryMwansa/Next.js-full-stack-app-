@@ -6,7 +6,6 @@ import { connectToDb } from "./utils";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcryptjs";
 
-//ADD POST SERVER ACTION
 export const addPost = async (prevState,formData) => {
   // const title = formData.get("title");
   // const desc = formData.get("desc");
@@ -33,8 +32,6 @@ export const addPost = async (prevState,formData) => {
   }
 };
 
-
-//DELETE POST SERVER ACTION
 export const deletePost = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
@@ -51,7 +48,6 @@ export const deletePost = async (formData) => {
   }
 };
 
-//ADD USER POST SERVER ACTION
 export const addUser = async (prevState,formData) => {
   const { username, email, password, img } = Object.fromEntries(formData);
 
@@ -73,7 +69,6 @@ export const addUser = async (prevState,formData) => {
   }
 };
 
-//DELETE USER POST SERVER ACTION
 export const deleteUser = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
@@ -90,31 +85,16 @@ export const deleteUser = async (formData) => {
   }
 };
 
-
-// LOGIN ACTIONS
-
-// This is a server action that handles the login process
-// It uses the NextAuth.js library to sign in the user with their credentials
-// It takes the previous state and form data as arguments
-// It extracts the username and password from the form data
-// It then calls the signIn function from NextAuth.js with the credentials
-// If the signIn function throws an error, it checks if the error message contains "CredentialsSignin"
-// If it does, it returns an error message indicating that the username or password is invalid
-// Otherwise, it throws the error
-// It returns nothing if the signIn is successful
 export const handleGithubLogin = async () => {
   "use server";
   await signIn("github");
 };
 
-
-// This is a server action that handles the logout process
 export const handleLogout = async () => {
   "use server";
   await signOut();
 };
 
-// This is a server action that handles the registration process
 export const register = async (previousState, formData) => {
   const { username, email, password, img, passwordRepeat } =
     Object.fromEntries(formData);
@@ -152,8 +132,6 @@ export const register = async (previousState, formData) => {
   }
 };
 
-// This is a server action that handles the login process
-// It uses the NextAuth.js library to sign in the user with their credentials
 export const login = async (prevState, formData) => {
   const { username, password } = Object.fromEntries(formData);
 

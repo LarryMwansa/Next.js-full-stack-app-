@@ -14,18 +14,13 @@ const NavigationTestPage = () => {
   console.log(q)
 
   const handleClick = ()=>{
-    console.log("clicked");
-    router.push("/"); // redirect to home page
-    // router.replace("/") // it won't add a new entry in the browser history stack
-    // router.refresh() // refreshes current make new request server to fetch data
-    // router.back() // opens up previous page
-    // router.forward() // opens up next page
+    console.log("clicked")
+    router.forward()
   }
 
   return (
     <div>
-      {/* you can use turn prefetch to improve performance */}
-      <Link href="/" prefetch={false}>Click here</Link> 
+      <Link href="/" prefetch={false}>Click here</Link>
       <button onClick={handleClick}>Write and Redirect</button>
     </div>
   )
